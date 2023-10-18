@@ -10,7 +10,7 @@ int inbuilts(char *cmd)
 {
 	char *builtn[] = {
 		"exit", "env", "setenv", "cd", NULL
-	};	/*built-in cmds*/
+	};      /*built-in cmds*/
 	int x;
 
 	for (x = 0; builtn[x]; x++)
@@ -66,7 +66,6 @@ void exit_func(char **cmd, char **av, int *sttus, int indx)
 			write(STDERR_FILENO, message, slength(message));
 			write(STDERR_FILENO, cmd[1], slength(cmd[1]));
 			write(STDERR_FILENO, "\n", 1);
-
 
 			free(idx_nm);
 			array_freed(cmd);
