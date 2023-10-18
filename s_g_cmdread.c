@@ -1,5 +1,3 @@
-s_g_cmdread.c
-
 #include "s_g_shell.h"
 
 /**
