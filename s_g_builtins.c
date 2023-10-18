@@ -84,14 +84,14 @@ void exit_func(char **cmd, char **av, int *sttus, int indx)
  * @cmd: db pointer str
  * @sttus: an integer
  */
-void environ_prt(char **cmd, int *sttus) /* a function that prints env */
+void environ_prt(char **cmd, int *sttus) /* prints env */
 {
 	int y;
 
 	for (y = 0; environ[y]; y++)
 	{
-		write(STDOUT_FILENO, environ[y], slength(environ[y])); /* printing out */
-		write(STDOUT_FILENO, "\n", 1); /* printing out */
+		write(STDOUT_FILENO, environ[y], slength(environ[y])); /* to print out */
+		write(STDOUT_FILENO, "\n", 1); /* to print out */
 	}
 	array_freed(cmd);
 	(*sttus) = 0; /* successful */
