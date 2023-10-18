@@ -60,8 +60,8 @@ void exit_func(char **cmd, char **av, int *sttus, int indx)
 		else
 		{
 			idx_nm = _itoa(indx);
-			write(STDERR_FILENO, av[0], slength(av[0]));
-			write(STDERR_FILENO, ": ", 2);
+			write(STDERR_FILENO, av[0], slength(av[0]));/* prints out */
+			write(STDERR_FILENO, ": ", 2); /* prints out a delim */
 			write(STDERR_FILENO, idx_nm, slength(idx_nm));
 			write(STDERR_FILENO, message, slength(message));
 			write(STDERR_FILENO, cmd[1], slength(cmd[1]));
@@ -84,15 +84,15 @@ void exit_func(char **cmd, char **av, int *sttus, int indx)
  * @cmd: db pointer str
  * @sttus: an integer
  */
-void environ_prt(char **cmd, int *sttus)
+void environ_prt(char **cmd, int *sttus) /* a function that prints env */
 {
 	int y;
 
 	for (y = 0; environ[y]; y++)
 	{
-		write(STDOUT_FILENO, environ[y], slength(environ[y]));
-		write(STDOUT_FILENO, "\n", 1);
+		write(STDOUT_FILENO, environ[y], slength(environ[y])); /* printing out */
+		write(STDOUT_FILENO, "\n", 1); /* printing out */
 	}
 	array_freed(cmd);
-	(*sttus) = 0;
+	(*sttus) = 0; /* successful */
 }
