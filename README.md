@@ -1,1 +1,1 @@
-This is a team project done by Sandra & Gabriel
+This is a team project
