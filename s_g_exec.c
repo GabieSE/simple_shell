@@ -23,6 +23,7 @@ int s_g_exec(char **cmd, char **av, int indx)
 	}
 
 	kid_pid = fork();
+
 	if (kid_pid == 0)
 	{
 		if (execve(cmd_fll, cmd, environ) == -1)
@@ -30,7 +31,6 @@ int s_g_exec(char **cmd, char **av, int indx)
 			free(cmd_fll), cmd_fll = NULL;
 			array_freed(cmd);
 		}
-
 	}
 	else
 	{
@@ -39,5 +39,4 @@ int s_g_exec(char **cmd, char **av, int indx)
 		free(cmd_fll), cmd_fll = NULL;
 	}
 	return (WEXITSTATUS(sttus));
-
 }
