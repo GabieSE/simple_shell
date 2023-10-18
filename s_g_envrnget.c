@@ -8,22 +8,22 @@
  */
 char *_envrnget(char *varnm)
 {
-	char *tpry, *lck, *num, *envrn;
+	char *ptr, *lck, *num, *envrn;
 	int j;
 
 	for (j = 0; environ[j]; j++)
 	{
-		tpry = sduplic(environ[j]);
-		lck = strtok(tpry, "=");
+		ptr = sduplic(environ[j]);
+		lck = strtok(ptr, "=");
 		if (scomp(lck, varnm) == 0)
 		{
 			num = strtok(NULL, "\n");
 			envrn = sduplic(num);
-			free(tpry);
+			free(ptr);
 			return (envrn);
 
 		}
-		free(tpry), tpry = NULL;
+		free(ptr), ptr = NULL;
 	}
 	return (NULL);
 }
